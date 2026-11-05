@@ -1,0 +1,18 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "wet-lab-agent-skills",
+  "version": "1.1.0",
+  "description": "Agent Skills for qPCR, ELISA, Western blot, and candidate-gene association analysis.",
+  "author": {
+    "name": "ahmed921x-art"
+  },
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "wet-lab",
+    "qpcr",
+    "elisa",
+    "western-blot",
+    "genetics"
+  ]
+}
