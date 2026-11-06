@@ -117,6 +117,15 @@ def test_rounding_of_statistic_rescues_a_borderline_p():
     assert status_of(claim("p_value", test="t", statistic="2.05", df=20, p=".053"))["status"] == "consistent"
 
 
+def test_reported_p_rounding_is_allowed_on_both_sides():
+    # z = 2.0570 gives p = .03969 to .03970 (scipy): below .04 but inside its rounding interval [.0395, .0405].
+    assert 2 * stats.norm.sf(2.05695) < 0.04
+    assert status_of(claim("p_value", test="z", statistic="2.0570", p=".04"))["status"] == "consistent"
+    # z = 1.9600 gives p = .04999 to .05001, inside the interval of a printed .05.
+    assert status_of(claim("p_value", test="z", statistic="1.9600", p=".05"))["status"] == "consistent"
+    assert status_of(claim("p_value", test="z", statistic="2.0570", p=".041"))["status"] == "inconsistent"
+
+
 def test_wrong_p_is_flagged_and_decision_error_marked():
     # chi2(3) = 6.80 gives p = .0786 (scipy), so "p < .05" is a change of decision.
     entry = status_of(claim("p_value", test="chi2", statistic="6.80", df=3, p="< .05"))
@@ -152,6 +161,19 @@ def test_f_and_r_checks():
     assert status_of(claim("p_value", test="F", statistic="3.41", df=2, df2=57, p=".04"))["status"] == "consistent"
     assert status_of(claim("p_value", test="r", statistic=".31", n=45, p=".038"))["status"] == "consistent"
     assert status_of(claim("p_value", test="r", statistic=".31", df=43, p=".038"))["status"] == "consistent"
+
+
+def test_r_uses_n_minus_two_degrees_of_freedom():
+    entry = status_of(claim("p_value", test="r", statistic=".31", n=45, p=".038"))
+    expected = 2 * stats.t.sf(0.31 * math.sqrt(43) / math.sqrt(1 - 0.31**2), 43)
+    assert entry["recomputed"]["p_recomputed"] == pytest.approx(expected, rel=1e-3)
+
+
+def test_printed_zero_p_means_below_half_a_unit():
+    # "p = .000" stands for p < .0005. t(30) = 3.9 gives p = .0005 (scipy) -> not below; t(30) = 5 -> 2e-5.
+    assert 2 * stats.t.sf(3.85, 30) > 0.0005
+    assert status_of(claim("p_value", test="t", statistic="3.80", df=30, p=".000"))["status"] == "inconsistent"
+    assert status_of(claim("p_value", test="t", statistic="5.00", df=30, p=".000"))["status"] == "consistent"
 
 
 def test_decimal_df_from_welch_is_handled():
@@ -216,6 +238,13 @@ def test_percent_with_count():
     assert status_of(claim("percent", percent="41.7", count=25, n=60))["status"] == "consistent"  # 41.667
     assert status_of(claim("percent", percent="35.0", count=21, n=62))["status"] == "inconsistent"  # 33.871
     assert status_of(claim("percent", percent="50", count=8, n=7))["status"] == "inconsistent"
+
+
+def test_percent_exactly_on_a_rounding_boundary_is_accepted():
+    # 1/8 = 12.5% exactly; printed without decimals it may read 12 or 13 depending on convention.
+    assert status_of(claim("percent", percent="12", count=1, n=8))["status"] == "consistent"
+    assert status_of(claim("percent", percent="13", count=1, n=8))["status"] == "consistent"
+    assert status_of(claim("percent", percent="14", count=1, n=8))["status"] == "inconsistent"
 
 
 def test_percent_without_count_matches_enumeration():

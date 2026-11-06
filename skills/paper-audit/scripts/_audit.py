@@ -235,8 +235,7 @@ _P_PATTERN = re.compile(r"^p?\s*(<=|>=|=|<|>|≤|≥)?\s*(.+)$", re.I)
 def parse_p(raw: Any) -> tuple[str, Reported]:
     """Parse a reported p-value such as '= .035', '<.001', 'p > 0.05' or 'ns'.
 
-    Returns the relation ('=', '<', '>') and the number. A printed 'p = .000' is
-    read as p < .0005, which is what such a value can only mean.
+    Returns the relation ('=', '<', '>') and the number.
     """
 
     text = clean_text(raw).replace(" ", "")
@@ -251,8 +250,7 @@ def parse_p(raw: Any) -> tuple[str, Reported]:
     number = parse_reported(match.group(2), "p")
     if not 0 <= number.value <= 1:
         raise InputError(f"p '{raw}' is outside 0 to 1")
-    if relation == "=" and number.value == 0:
-        return "<", Reported(number.text, number.half_unit, Decimal(0))
+    # A printed "p = .000" needs no special case: its rounding interval is [0, .0005].
     return relation, number
 
 
