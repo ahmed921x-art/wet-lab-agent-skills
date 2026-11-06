@@ -1,0 +1,19 @@
+id,page,quote,check,test,statistic,df,df2,n,p,tails,mean,items,percent,count,parts,total,estimate,ci_low,ci_high,level,ci_method,note
+C01,4,"Sleep quality improved in the app group, t(28) = 2.20, p = .036.",p_value,t,2.20,28,,,= .036,,,,,,,,,,,,,SYNTHETIC example claim
+C02,4,"Mood differed across the three arms, F(2, 57) = 3.41, p = .04.",p_value,F,3.41,2,57,,= .04,,,,,,,,,,,,,SYNTHETIC example claim
+C03,5,"Adherence depended on age band, chi2(3) = 6.80, p < .05.",p_value,chi2,6.80,3,,,< .05,,,,,,,,,,,,,SYNTHETIC example claim
+C04,5,"Minutes of use correlated with wellbeing, r = .31, p = .038, n = 45.",p_value,r,.31,,,45,= .038,,,,,,,,,,,,,SYNTHETIC example claim
+C05,5,"Daytime sleepiness fell, z = 1.75, p = .04.",p_value,z,1.75,,,,= .04,,,,,,,,,,,,,SYNTHETIC example claim
+C06,3,"Baseline wellbeing (single 1-7 item) averaged 5.19 in the 28 controls.",grim,,,,,28,,,5.19,1,,,,,,,,,,SYNTHETIC example claim
+C07,3,"The 25 app users averaged 3.48 on the same item.",grim,,,,,25,,,3.48,1,,,,,,,,,,SYNTHETIC example claim
+C08,3,"Across all 150 screened people the mean was 2.47.",grim,,,,,150,,,2.47,1,,,,,,,,,,SYNTHETIC example claim
+C09,3,"Of the 60 participants, 25 (41.7%) were women.",percent,,,,,60,,,,,41.7,25,,,,,,,,SYNTHETIC example claim
+C10,3,"21 of the 62 completers (35.0%) used the app daily.",percent,,,,,62,,,,,35.0,21,,,,,,,,SYNTHETIC example claim
+C11,2,"We randomized 90 participants: 30 to app, 31 to diary, and 28 to waitlist.",sum,,,,,,,,,,,,30;31;28,90,,,,,,SYNTHETIC example claim
+C12,2,"48.3% were students and 51.7% were employed.",sum,,,,,,,,,,,,48.3;51.7,100,,,,,,SYNTHETIC example claim
+C13,6,"Good sleep was more likely with the app (OR 1.89, 95% CI 1.21 to 2.95, p = .005).",ratio_ci,,,,,,= .005,,,,,,,,1.89,1.21,2.95,95,,SYNTHETIC example claim
+C14,6,"The risk of dropout was higher on the waitlist (RR 2.40, 95% CI 1.10 to 3.20).",ratio_ci,,,,,,,,,,,,,,2.40,1.10,3.20,95,,SYNTHETIC example claim
+C15,6,"Insomnia remission was more frequent (OR 1.45, 95% CI 0.92 to 2.28, p = .03).",ratio_ci,,,,,,= .03,,,,,,,,1.45,0.92,2.28,95,,SYNTHETIC example claim
+C16,7,"Wellbeing rose by 4.2 points (95% CI 1.1 to 7.3; p = .008).",diff_ci,,,,,,= .008,,,,,,,,4.2,1.1,7.3,95,,SYNTHETIC example claim
+C17,7,"Total sleep time increased, t = 2.5, p = .02.",p_value,t,2.5,,,,= .02,,,,,,,,,,,,,SYNTHETIC example claim; df not reported in the paper
+C18,3,"A 3-item stress scale (items scored 1-5) averaged 3.47 in 20 participants.",grim,,,,,20,,,3.47,3,,,,,,,,,,SYNTHETIC example claim

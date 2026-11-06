@@ -1,0 +1,462 @@
+{
+  "assessed": "2026-11-06",
+  "source": "docs/repo-comparison.md in ahmed921x-art/wet-lab-agent-skills",
+  "tools": [
+    {
+      "id": "paper-audit",
+      "repo": "ahmed921x-art/wet-lab-agent-skills (skills/paper-audit)",
+      "kind": "skill in this repository",
+      "status": "recommended",
+      "what": "Recompute p-values, GRIM, percentages, totals, and confidence intervals reported in a paper",
+      "keywords": [
+        "p-value",
+        "p value",
+        "grim",
+        "recompute",
+        "check the numbers",
+        "statistics in a paper",
+        "consistency",
+        "reporting error",
+        "audit",
+        "add up",
+        "تدقيق",
+        "أرقام الورقة",
+        "قيمة p",
+        "يتسق"
+      ],
+      "install": "Already in this repository: skills/paper-audit",
+      "license": "MIT",
+      "reuse": "yes",
+      "needs": [],
+      "cautions": [
+        "A flag is an inconsistency to examine, never an accusation of misconduct"
+      ]
+    },
+    {
+      "id": "paper-qa",
+      "repo": "Future-House/paper-qa",
+      "kind": "library",
+      "status": "recommended",
+      "what": "Answer questions over a folder of PDFs with citations to the passages used",
+      "keywords": [
+        "question",
+        "answer",
+        "literature",
+        "search my papers",
+        "pdf",
+        "rag",
+        "summarize papers",
+        "citation",
+        "evidence",
+        "contradiction",
+        "ورقة",
+        "أوراق",
+        "أبحاث",
+        "مراجع",
+        "سؤال",
+        "ملخص"
+      ],
+      "install": "pip install paper-qa",
+      "license": "Apache-2.0",
+      "reuse": "yes, keep the license and NOTICE",
+      "needs": [
+        "LLM and embedding API keys, or paper-qa[local] for a local embedding model"
+      ],
+      "cautions": [
+        "Loads its own index files with pickle: never open an index from an untrusted source"
+      ]
+    },
+    {
+      "id": "deepchem",
+      "repo": "deepchem/deepchem",
+      "kind": "library",
+      "status": "recommended",
+      "what": "Deep learning for molecules, materials, proteins, and drug discovery",
+      "keywords": [
+        "molecule",
+        "molecular",
+        "drug",
+        "chemistry",
+        "smiles",
+        "toxicity",
+        "admet",
+        "protein",
+        "materials",
+        "property prediction",
+        "graph neural",
+        "جزيء",
+        "دواء",
+        "كيمياء",
+        "بروتين"
+      ],
+      "install": "pip install deepchem (add [torch], [tensorflow] or [jax] for a back end)",
+      "license": "MIT",
+      "reuse": "yes",
+      "needs": [
+        "A deep learning back end; a GPU helps for training"
+      ],
+      "cautions": [
+        "Dataset caches use pickle: only load caches you created"
+      ]
+    },
+    {
+      "id": "pyqtgraph",
+      "repo": "pyqtgraph/pyqtgraph",
+      "kind": "library",
+      "status": "recommended",
+      "what": "Fast interactive plots for large or live data in a Qt desktop window",
+      "keywords": [
+        "interactive plot",
+        "real-time",
+        "realtime",
+        "live data",
+        "streaming",
+        "oscilloscope",
+        "qt",
+        "gui",
+        "large data plot",
+        "رسم تفاعلي",
+        "بيانات حية"
+      ],
+      "install": "pip install pyqtgraph (plus a Qt binding such as PySide6 or PyQt6)",
+      "license": "MIT",
+      "reuse": "yes",
+      "needs": [
+        "A desktop display; does not work in a headless agent session"
+      ],
+      "cautions": [
+        "For figures in papers use matplotlib instead"
+      ]
+    },
+    {
+      "id": "bioicons",
+      "repo": "duerrsimon/bioicons",
+      "kind": "assets",
+      "status": "recommended",
+      "what": "Free scientific icons (cells, lab equipment, organisms) as SVG, browsable at bioicons.com",
+      "keywords": [
+        "icon",
+        "icons",
+        "svg",
+        "illustration",
+        "graphical abstract",
+        "cell drawing",
+        "lab equipment",
+        "figure art",
+        "أيقونة",
+        "أيقونات",
+        "رسم خلية"
+      ],
+      "install": "Browse bioicons.com, or take SVGs from static/icons/<license>/ in the repository",
+      "license": "Site MIT; each icon has its own license (CC0, CC-BY, CC-BY-SA, BSD and others)",
+      "reuse": "per icon: cite each icon; CC-BY-SA icons make the figure share-alike",
+      "needs": [],
+      "cautions": [
+        "Record the author and license of every icon used"
+      ]
+    },
+    {
+      "id": "drawio-scientific-illustrator",
+      "repo": "icebird1998/drawio-scientific-illustrator",
+      "kind": "skill",
+      "status": "recommended",
+      "what": "Build or recreate scientific diagrams in the draw.io desktop app",
+      "keywords": [
+        "diagram",
+        "schematic",
+        "flowchart",
+        "draw.io",
+        "drawio",
+        "pathway diagram",
+        "workflow figure",
+        "recreate figure",
+        "مخطط",
+        "رسم توضيحي",
+        "شكل توضيحي"
+      ],
+      "install": "Read install.sh first, then follow the README (Codex plugin; needs the draw.io desktop app and Node 22+)",
+      "license": "MIT",
+      "reuse": "yes",
+      "needs": [
+        "draw.io desktop",
+        "Node.js 22 or newer"
+      ],
+      "cautions": [
+        "While running it opens a local debugging port that any local process could attach to"
+      ]
+    },
+    {
+      "id": "k-dense-scientific-agent-skills",
+      "repo": "K-Dense-AI/scientific-agent-skills",
+      "kind": "skill collection",
+      "status": "recommended",
+      "what": "177 scientific skills: bioinformatics, statistics, chemistry, databases, writing",
+      "keywords": [
+        "skill",
+        "skills",
+        "bioinformatics",
+        "scanpy",
+        "rnaseq",
+        "rna-seq",
+        "single cell",
+        "statistics",
+        "power analysis",
+        "database",
+        "pubmed",
+        "statsmodels",
+        "مهارات",
+        "إحصاء",
+        "معلوماتية حيوية",
+        "scientific writing",
+        "write a paper",
+        "manuscript",
+        "كتابة علمية"
+      ],
+      "install": "npx skills add K-Dense-AI/scientific-agent-skills, or copy one folder from skills/",
+      "license": "MIT",
+      "reuse": "yes",
+      "needs": [
+        "Depends on the skill"
+      ],
+      "cautions": [
+        "Not every skill has tests; prefer ones with a tests/<skill> folder"
+      ]
+    },
+    {
+      "id": "openscience",
+      "repo": "synthetic-sciences/openscience",
+      "kind": "system",
+      "status": "caution",
+      "what": "An open-source research agent (CLI and desktop) bundling about 370 skills",
+      "keywords": [
+        "research agent",
+        "agent app",
+        "desktop agent",
+        "workbench",
+        "وكيل بحث"
+      ],
+      "install": "npm install -g @synsci/openscience (see its README)",
+      "license": "Apache-2.0, with an attribution file for bundled skills",
+      "reuse": "yes, keep the license, NOTICE and attributions",
+      "needs": [
+        "Node.js",
+        "model provider keys"
+      ],
+      "cautions": [
+        "A whole agent, not a skill to drop in; few skill-level tests"
+      ]
+    },
+    {
+      "id": "aipoch-medical-research-skills",
+      "repo": "aipoch/medical-research-skills",
+      "kind": "skill collection",
+      "status": "caution",
+      "what": "550+ medical-research skills (evidence appraisal, protocols, writing)",
+      "keywords": [
+        "medical",
+        "clinical",
+        "trial protocol",
+        "systematic review",
+        "critical appraisal",
+        "newcastle-ottawa",
+        "evidence level",
+        "طبي",
+        "سريري",
+        "مراجعة منهجية"
+      ],
+      "install": "git clone https://github.com/aipoch/medical-research-skills.git and copy one skill folder",
+      "license": "MIT (attribution of some K-Dense-related material is unclear)",
+      "reuse": "yes, after checking each skill's origin",
+      "needs": [],
+      "cautions": [
+        "A sampled power calculator ignores its alpha argument: check any numbers it produces against statsmodels"
+      ]
+    },
+    {
+      "id": "paper2code",
+      "repo": "going-doer/Paper2Code",
+      "kind": "system",
+      "status": "caution",
+      "what": "Multi-agent pipeline that turns a machine learning paper into a code repository",
+      "keywords": [
+        "paper to code",
+        "implement paper",
+        "reproduce paper",
+        "code from paper",
+        "كود من ورقة",
+        "تنفيذ ورقة"
+      ],
+      "install": "git clone https://github.com/going-doer/Paper2Code.git, then pip install -r requirements.txt",
+      "license": "Apache-2.0",
+      "reuse": "yes",
+      "needs": [
+        "OpenAI API key or a local vLLM model"
+      ],
+      "cautions": [
+        "No tests; review and run generated code in a sandbox"
+      ]
+    },
+    {
+      "id": "paper2video",
+      "repo": "showlab/Paper2Video",
+      "kind": "system",
+      "status": "caution",
+      "what": "Generate a presentation video (slides, speech, talking head) from a paper",
+      "keywords": [
+        "video",
+        "presentation video",
+        "talk",
+        "slides video",
+        "فيديو",
+        "عرض"
+      ],
+      "install": "git clone https://github.com/showlab/Paper2Video.git, then pip install -r src/requirements.txt",
+      "license": "MIT",
+      "reuse": "yes",
+      "needs": [
+        "Gemini or OpenAI API key",
+        "GPU for the talking head"
+      ],
+      "cautions": [
+        "Executes model-generated code; run in a sandbox"
+      ]
+    },
+    {
+      "id": "ai-researcher",
+      "repo": "HKUDS/AI-Researcher",
+      "kind": "system",
+      "status": "caution",
+      "what": "Autonomous research agent that runs experiments inside Docker",
+      "keywords": [
+        "autonomous research",
+        "ai researcher",
+        "automated experiments",
+        "research automation",
+        "بحث آلي"
+      ],
+      "install": "Follow the README (uv and Docker image); read the code first",
+      "license": "MIT declared in setup.cfg only; no LICENSE file",
+      "reuse": "unclear: no LICENSE file",
+      "needs": [
+        "Docker",
+        "LLM API keys"
+      ],
+      "cautions": [
+        "API-key-shaped strings are committed in the repository",
+        "Runs received shell commands; use only in an isolated container",
+        "No tests"
+      ]
+    },
+    {
+      "id": "awesome-ai-for-science",
+      "repo": "ai4s-research/awesome-ai-for-science",
+      "kind": "list",
+      "status": "recommended",
+      "what": "Curated list of about 785 AI-for-science tools, papers and datasets",
+      "keywords": [
+        "list of tools",
+        "find a tool",
+        "awesome",
+        "discover",
+        "survey of tools",
+        "قائمة أدوات",
+        "ابحث عن أداة"
+      ],
+      "install": "Read the README in the browser",
+      "license": "MIT",
+      "reuse": "yes",
+      "needs": [],
+      "cautions": [
+        "Links are not checked automatically; some may be dead"
+      ]
+    },
+    {
+      "id": "ai-scientist",
+      "repo": "SakanaAI/AI-Scientist",
+      "kind": "system",
+      "status": "excluded",
+      "what": "End-to-end automated research and paper writing",
+      "keywords": [
+        "ai scientist",
+        "write a paper automatically",
+        "automated paper",
+        "generate paper",
+        "كتابة ورقة آليا"
+      ],
+      "install": "Not recommended here",
+      "license": "AI Scientist Source Code License (use restrictions; not open source)",
+      "reuse": "no",
+      "needs": [],
+      "cautions": [
+        "Excluded by the repository owner because of its license terms"
+      ],
+      "alternative": "k-dense-scientific-agent-skills (its scientific-writing skill, with you writing and checking)"
+    },
+    {
+      "id": "ai-scientist-v2",
+      "repo": "SakanaAI/AI-Scientist-v2",
+      "kind": "system",
+      "status": "excluded",
+      "what": "Tree-search version of AI-Scientist",
+      "keywords": [
+        "ai scientist",
+        "ai-scientist-v2",
+        "agentic tree search",
+        "automated paper"
+      ],
+      "install": "Not recommended here",
+      "license": "AI Scientist Source Code License (use restrictions; not open source)",
+      "reuse": "no",
+      "needs": [],
+      "cautions": [
+        "Excluded by the repository owner because of its license terms",
+        "Executes LLM-written code"
+      ],
+      "alternative": "k-dense-scientific-agent-skills (its scientific-writing skill, with you writing and checking)"
+    },
+    {
+      "id": "deeplearning-biology",
+      "repo": "hussius/deeplearning-biology",
+      "kind": "list",
+      "status": "excluded",
+      "what": "List of deep learning papers in biology",
+      "keywords": [
+        "deep learning biology",
+        "deep learning papers",
+        "bio deep learning list"
+      ],
+      "install": "Not recommended here",
+      "license": "None (all rights reserved)",
+      "reuse": "no",
+      "needs": [],
+      "cautions": [
+        "Excluded by the repository owner: no license"
+      ],
+      "alternative": "awesome-ai-for-science"
+    },
+    {
+      "id": "codex-claude-academic-skills",
+      "repo": "zLanqing/codex-claude-academic-skills",
+      "kind": "skill collection",
+      "status": "caution",
+      "what": "Chinese-first academic writing, office documents, and a scientific toolkit",
+      "keywords": [
+        "chinese",
+        "academic writing",
+        "thesis",
+        "rebuttal",
+        "polish",
+        "word document",
+        "كتابة أكاديمية",
+        "رسالة"
+      ],
+      "install": "Copy one skill folder after reading it",
+      "license": "MIT, but bundles pdf/ and xlsx/ files marked All rights reserved (Anthropic)",
+      "reuse": "only its own three skills; never the bundled pdf/ or xlsx/ folders",
+      "needs": [],
+      "cautions": [
+        "No tests"
+      ]
+    }
+  ]
+}

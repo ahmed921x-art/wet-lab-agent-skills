@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "wet-lab-agent-skills",
-  "version": "1.1.0",
-  "description": "Agent Skills for qPCR, ELISA, Western blot, and candidate-gene association analysis.",
+  "version": "1.2.0",
+  "description": "Agent Skills for qPCR, ELISA, Western blot, candidate-gene association, paper consistency audits, and choosing research-AI tools.",
   "author": {
     "name": "ahmed921x-art"
   },
@@ -13,6 +13,8 @@
     "qpcr",
     "elisa",
     "western-blot",
-    "genetics"
+    "genetics",
+    "paper-audit",
+    "research-ai-router"
   ]
 }
