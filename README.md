@@ -10,6 +10,7 @@ draft report. They run offline, and each one is built to prevent the mistakes it
 | [western-blot-densitometry](skills/western-blot-densitometry/SKILL.md) | Band density tables | Within-membrane normalization, linearity, saturation and loading QC |
 | [candidate-gene-association](skills/candidate-gene-association/SKILL.md) | Genotype tables or counts | Power, Hardy-Weinberg, association models, meta-analysis, forest plots |
 | [paper-audit](skills/paper-audit/SKILL.md) | Numbers quoted from a paper, with page and quote | Recomputed p-values, GRIM, percentage, total, and interval checks, as a claim ledger and report |
+| [research-ai-router](skills/research-ai-router/SKILL.md) | A research task, in English or Arabic | The fitting tool from 16 reviewed research-AI repositories, with install, license, and cautions |
 
 ## Install
 
@@ -17,7 +18,7 @@ Copy any folder from `skills/` into your agent's skills directory. For Claude Co
 Then ask in plain language, for example "analyse my qPCR export".
 
 Requirements are Python 3.11 or newer, plus `scipy` for qPCR, Western blot, and ELISA, and `numpy` for ELISA.
-`paper-audit` needs only the standard library.
+`paper-audit` and `research-ai-router` need only the standard library.
 `matplotlib` is needed for figures and `openpyxl` for .xlsx import.
 
 ## Status
@@ -45,7 +46,8 @@ follow [K-Dense scientific-agent-skills](https://github.com/K-Dense-AI/scientifi
 مهارات تحوّل نتائج المختبر اليومية من ملف الجهاز إلى إحصاء مفحوص ورسم بياني ومسودة تقرير، وتشتغل بدون إنترنت.
 
 انسخ أي مجلد من `skills/` إلى مجلد مهارات الوكيل، وفي Claude Code هو `~/.claude/skills/`، وبعدها اطلب بكلامك العادي،
-مثل: «حلل لي ملف qPCR». ومهارة `paper-audit` تعيد حساب أرقام ورقة علمية وتبيّن ما يتسق منها، وأي تعارض فيها سؤال يُراجَع وليس اتهامًا. اختبارات الاستيراد تمت على أمثلة مصطنعة، فراجع أول نتيجة مع ملفك الأصلي، واعتبر كل تقرير مسودة.
+مثل: «حلل لي ملف qPCR». ومهارة `paper-audit` تعيد حساب أرقام ورقة علمية وتبيّن ما يتسق منها، وأي تعارض فيها سؤال يُراجَع وليس اتهامًا. ومهارة `research-ai-router` تجمع ١٦ مستودعًا في مهارة واحدة:
+تقول لها وش تبي، وتختار لك الأداة المناسبة مع أمر التثبيت والترخيص والتحذيرات، بدون نسخ أي كود منها. اختبارات الاستيراد تمت على أمثلة مصطنعة، فراجع أول نتيجة مع ملفك الأصلي، واعتبر كل تقرير مسودة.
 
 ## License
 
